@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tauá — Coração do Sertão dos Inhamuns</title>
+    <link
+        href="https://imgs.search.brave.com/h3Up4qpSZuNHBGU6cgPRs7d-HF2guT1MbKga1eXTqnk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MDYvMTEvNzcvOWYv/dGF1YS5qcGcp"
+        rel="stylesheet">
+        <link rel="stylesheet" href="teste.css">
+    <style>
+        :root {
+            --terra: #C4622D;
+            --areia: #E8C87A;
+            --ceu: #2B5F8E;
+            --verde: #4A7C59;
+            --noite: #0F1B2D;
+            --branco: #FAF5EE;
+            --ouro: #D4A843;
+            --cobre: #A0522D;
+            --cinza: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--branco);
+            color: var(--noite);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 16px 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(15, 27, 45, 0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(212, 168, 67, 0.2);
+            transition: background 0.3s;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--areia);
+        }
+
+        .nav-logo span {
+            color: var(--terra);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(250, 245, 238, 0.7);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--areia);
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(15, 27, 45, 0.15) 0%, rgba(15, 27, 45, 0.55) 55%, rgba(15, 27, 45, 0.92) 100%),
+                url('https://imgs.search.brave.com/h3Up4qpSZuNHBGU6cgPRs7d-HF2guT1MbKga1eXTqnk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MDYvMTEvNzcvOWYv/dGF1YS5qcGc') center/cover;
+        }
+
+        .hero-sun {
+            position: absolute;
+            top: 90px;
+            right: 130px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #FFD97D 0%, #E8A020 45%, rgba(232, 160, 32, 0) 72%);
+            filter: blur(1px);
+            animation: sun-pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes sun-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: .85
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 72px 88px;
+            max-width: 820px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--ouro);
+            border: 1px solid rgba(212, 168, 67, 0.6);
+            padding: 5px 14px;
+            margin-bottom: 22px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.8rem, 7vw, 6.8rem);
+            font-weight: 900;
+            line-height: 0.93;
+            color: var(--branco);
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--areia);
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: rgba(250, 245, 238, 0.72);
+            margin: 22px 0 38px;
+            line-height: 1.65;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 38px;
+        }
+
+        .hero-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--ouro);
+        }
+
+        .hero-stat-label {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: rgba(250, 245, 238, 0.5);
+            text-transform: uppercase;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--terra);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 36px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: var(--cobre);
+            transform: translateX(4px);
+        }
+
+        .section {
+            padding: 96px 72px;
+        }
+
+        .sec-tag {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--terra);
+            margin-bottom: 10px;
+        }
+
+        .sec-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+
+        .sec-desc {
+            font-size: 0.97rem;
+            font-weight: 300;
+            color: var(--cinza);
+            line-height: 1.75;
+            max-width: 560px;
+        }
+
+        .banner-hist {
+            background: var(--noite);
+            padding: 80px 72px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .banner-hist h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--branco);
+            line-height: 1.1;
+        }
+
+        .banner-hist h2 em {
+            color: var(--ouro);
+            font-style: italic;
+        }
+
+        .banner-hist p {
+            color: rgba(250, 245, 238, 0.62);
+            font-size: 0.97rem;
+            line-height: 1.8;
+            margin-top: 18px;
+        }
+
+        .story-quote {
+            border-left: 3px solid var(--terra);
+            padding-left: 28px;
+        }
+
+        .story-quote blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--areia);
+            line-height: 1.6;
+        }
+
+        .story-quote cite {
+            display: block;
+            margin-top: 14px;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            color: rgba(250, 245, 238, 0.4);
+            text-transform: uppercase;
+        }
+
+        .busca-wrap {
+            background: var(--branco);
+            padding: 72px 72px;
+            text-align: center;
+        }
+
+        .busca-wrap h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            margin-bottom: 6px;
+        }
+
+        .busca-wrap p {
+            color: var(--cinza);
+            margin-bottom: 34px;
+        }
+
+        .busca-bar {
+            display: flex;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 2px solid var(--noite);
+        }
+
+        .busca-bar input {
+            flex: 1;
+            padding: 17px 22px;
+            font-family: 'Barlow', sans-serif;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+
+        .busca-bar select {
+            padding: 0 16px;
+            border: none;
+            border-left: 2px solid var(--noite);
+            background: transparent;
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .busca-bar button {
+            background: var(--terra);
+            color: #fff;
+            padding: 0 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .busca-bar button:hover {
+            background: var(--cobre);
+        }
+
+        .filtros {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 22px;
+            flex-wrap: wrap;
+        }
+
+        .ftb {
+            padding: 8px 20px;
+            border: 1px solid #ccc;
+            background: none;
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .ftb:hover,
+        .ftb.active {
+            background: var(--noite);
+            color: #fff;
+            border-color: var(--noite);
+        }
+
+        .pontos {
+            background: var(--branco);
+        }
+
+        .pontos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 54px;
+        }
+
+        .pontos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3px;
+        }
+
+        .pcard {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            min-height: 360px;
+        }
+
+        .pcard:first-child {
+            grid-row: span 2;
+            min-height: 720px;
+        }
+
+        .pcard-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.7s ease;
+        }
+
+        .pcard:hover .pcard-bg {
+            transform: scale(1.06);
+        }
+
+        .pcard-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 27, 45, 0.93) 0%, rgba(15, 27, 45, 0.04) 55%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            transition: background 0.4s;
+        }
+
+        .pcard:hover .pcard-overlay {
+            background: linear-gradient(to top, rgba(196, 98, 45, 0.9) 0%, rgba(196, 98, 45, 0.03) 55%);
+        }
+
+        .pcard-emoji {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .pcard-cat {
+            font-size: 0.62rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ouro);
+            margin-bottom: 6px;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .pcard-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .pcard:first-child .pcard-name {
+            font-size: 2.4rem;
+        }
+
+        .pcard-desc {
+            font-size: 0.83rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+        }
+
+        .pcard-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .bg-quinamui {
+            background: linear-gradient(160deg, #3b6b40, #1f3c24, #c4622d);
+        }
+
+        .bg-trici {
+            background: linear-gradient(160deg, #1a4a72, #0d2640, #4a7c59);
+        }
+
+        .bg-marrecus {
+            background: linear-gradient(160deg, #1a6040, #0d3020, #2b5f8e);
+        }
+
+        .bg-museu {
+            background: linear-gradient(160deg, #6b4a1a, #3c2a0a, #c4622d);
+        }
+
+        .bg-parque {
+            background: linear-gradient(160deg, #2b5f8e, #1a3d5c, #4a7c59);
+        }
+
+        .bg-artesanato {
+            background: linear-gradient(160deg, #8b4513, #5c2d0a, #d4a843);
+        }
+
+        .bg-matriz {
+            background: linear-gradient(160deg, #2b5f8e, #c4622d, #1a3d5c);
+        }
+
+        .bg-expo {
+            background: linear-gradient(160deg, #4a7c59, #1f3c24, #0d2640);
+        }
+
+        .gastro {
+            background: #150E06;
+        }
+
+        .gastro .sec-tag {
+            color: var(--ouro);
+        }
+
+        .gastro .sec-title {
+            color: var(--branco);
+        }
+
+        .gastro .sec-desc {
+            color: rgba(250, 245, 238, 0.55);
+        }
+
+        .gastro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            margin-top: 54px;
+        }
+
+        .gcard {
+            background: #1A0F07;
+            padding: 36px 32px;
+            transition: background 0.35s;
+            border: 1px solid rgba(212, 168, 67, 0.07);
+        }
+
+        .gcard:hover {
+            background: rgba(212, 168, 67, 0.07);
+        }
+
+        .gcard-icon {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+        }
+
+        .gcard-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--branco);
+            margin-bottom: 10px;
+        }
+
+        .gcard-desc {
+            font-size: 0.87rem;
+            color: rgba(250, 245, 238, 0.58);
+            line-height: 1.7;
+        }
+
+        .gcard-tag {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ouro);
+            border: 1px solid rgba(212, 168, 67, 0.3);
+            padding: 3px 10px;
+        }
+
+        .gcard-dest {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            background: rgba(196, 98, 45, 0.1);
+            border: 1px solid rgba(212, 168, 67, 0.2) !important;
+        }
+
+        .gcard-dest-img {
+            background: linear-gradient(135deg, #8B3A1A, #C4622D, #D4A843);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            min-height: 240px;
+        }
+
+        .gcard-dest-txt {
+            padding: 40px;
+        }
+
+        .gcard-dest-txt h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--branco);
+            margin-bottom: 12px;
+        }
+
+        .gcard-dest-txt p {
+            font-size: 0.93rem;
+            color: rgba(250, 245, 238, 0.65);
+            line-height: 1.75;
+        }
+
+        .eventos {
+            background: var(--noite);
+        }
+
+        .eventos .sec-tag {
+            color: var(--ouro);
+        }
+
+        .eventos .sec-title {
+            color: var(--branco);
+        }
+
+        .eventos .sec-desc {
+            color: rgba(250, 245, 238, 0.55);
+        }
+
+        .etabs {
+            display: flex;
+            border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+            margin: 40px 0 0;
+        }
+
+        .etab {
+            background: none;
+            border: none;
+            padding: 12px 28px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(250, 245, 238, 0.4);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+            transition: all 0.3s;
+        }
+
+        .etab.active,
+        .etab:hover {
+            color: var(--ouro);
+            border-bottom-color: var(--ouro);
+        }
+
+        .ev-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 2px;
+        }
+
+        .ecard {
+            border: 1px solid rgba(212, 168, 67, 0.1);
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.35s;
+        }
+
+        .ecard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--terra), var(--ouro));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+
+        .ecard:hover::before {
+            transform: scaleX(1);
+        }
+
+        .ecard:hover {
+            background: rgba(212, 168, 67, 0.04);
+            border-color: rgba(212, 168, 67, 0.3);
+        }
+
+        .ecard-date {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .eday {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--ouro);
+            line-height: 1;
+        }
+
+        .emy {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(250, 245, 238, 0.38);
+            line-height: 1.4;
+        }
+
+        .ebadge {
+            display: inline-block;
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            margin-bottom: 12px;
+        }
+
+        .b-cult {
+            background: rgba(43, 95, 142, 0.25);
+            color: #7AB5E0;
+            border: 1px solid rgba(43, 95, 142, 0.45);
+        }
+
+        .b-rel {
+            background: rgba(212, 168, 67, 0.12);
+            color: var(--ouro);
+            border: 1px solid rgba(212, 168, 67, 0.28);
+        }
+
+        .b-gast {
+            background: rgba(196, 98, 45, 0.18);
+            color: #E88855;
+            border: 1px solid rgba(196, 98, 45, 0.38);
+        }
+
+        .b-agro {
+            background: rgba(74, 124, 89, 0.18);
+            color: #7DC49A;
+            border: 1px solid rgba(74, 124, 89, 0.38);
+        }
+
+        .b-show {
+            background: rgba(160, 82, 45, 0.18);
+            color: #E0A080;
+            border: 1px solid rgba(160, 82, 45, 0.38);
+        }
+
+        .etitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--branco);
+            margin-bottom: 8px;
+        }
+
+        .elocal {
+            font-size: 0.78rem;
+            color: rgba(250, 245, 238, 0.4);
+            margin-bottom: 10px;
+        }
+
+        .edesc {
+            font-size: 0.85rem;
+            color: rgba(250, 245, 238, 0.58);
+            line-height: 1.6;
+        }
+
+        .emais {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--terra);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .emais:hover {
+            color: var(--ouro);
+        }
+
+        .efeat {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 260px;
+            background: linear-gradient(135deg, rgba(196, 98, 45, 0.1), rgba(212, 168, 67, 0.05));
+            border-color: rgba(212, 168, 67, 0.25) !important;
+        }
+
+        .efeat-l {
+            padding: 40px;
+            border-right: 1px solid rgba(212, 168, 67, 0.12);
+        }
+
+        .efeat-r {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(212, 168, 67, 0.12);
+            line-height: 1;
+        }
+
+        .feat-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--branco);
+            line-height: 1.1;
+            margin-top: -20px;
+        }
+
+        .feat-title em {
+            color: var(--ouro);
+            font-style: italic;
+        }
+
+        .feat-sub {
+            font-size: 0.85rem;
+            color: rgba(250, 245, 238, 0.55);
+            margin-top: 10px;
+            line-height: 1.65;
+        }
+
+        .feat-stats {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .fstat-n {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--ouro);
+            font-weight: 900;
+        }
+
+        .fstat-l {
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(250, 245, 238, 0.38);
+        }
+
+        .artist-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .apill {
+            padding: 4px 12px;
+            border: 1px solid rgba(212, 168, 67, 0.25);
+            font-size: 0.72rem;
+            color: rgba(250, 245, 238, 0.6);
+        }
+
+        .artesanato {
+            background: var(--branco);
+        }
+
+        .arte-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 54px;
+        }
+
+        .acard {
+            border: 1px solid rgba(15, 27, 45, 0.08);
+            padding: 28px 24px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .acard:hover {
+            border-color: var(--terra);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(196, 98, 45, 0.12);
+        }
+
+        .acard-icon {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+        }
+
+        .acard-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .acard-desc {
+            font-size: 0.83rem;
+            color: var(--cinza);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: var(--terra);
+            padding: 80px 72px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .cta-section h2 em {
+            color: var(--noite);
+            font-style: italic;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.72);
+            margin-top: 16px;
+            line-height: 1.7;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .btn-dark {
+            background: var(--noite);
+            color: #fff;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-wht {
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-wht:hover {
+            background: #fff;
+            color: var(--terra);
+        }
+
+        .cta-info {
+            background: var(--noite);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .info-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .info-label {
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(250, 245, 238, 0.35);
+            margin-bottom: 4px;
+        }
+
+        .info-val {
+            font-size: 0.9rem;
+            color: var(--branco);
+        }
+
+        footer {
+            background: var(--noite);
+            padding: 64px 72px 32px;
+            border-top: 3px solid var(--terra);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--areia);
+        }
+
+        .footer-logo span {
+            color: var(--terra);
+        }
+
+        .footer-tagline {
+            font-size: 0.83rem;
+            color: rgba(250, 245, 238, 0.38);
+            margin-top: 10px;
+            line-height: 1.65;
+            max-width: 260px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ouro);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(250, 245, 238, 0.45);
+            text-decoration: none;
+            font-size: 0.87rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--areia);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(250, 245, 238, 0.07);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.73rem;
+            color: rgba(250, 245, 238, 0.28);
+        }
+
+        .footer-bottom span {
+            color: var(--terra);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.vis {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media(max-width:900px) {
+            nav {
+                padding: 14px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section,
+            .banner-hist,
+            .busca-wrap,
+            .cta-section,
+            footer {
+                padding: 56px 24px;
+            }
+
+            .hero-content {
+                padding: 0 24px 64px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .banner-hist,
+            .cta-section {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .pontos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .pcard:first-child {
+                grid-column: span 2;
+                min-height: 360px;
+                grid-row: span 1;
+            }
+
+            .gastro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gcard-dest {
+                grid-template-columns: 1fr;
+            }
+
+            .ev-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .efeat {
+                grid-template-columns: 1fr;
+                grid-column: span 1;
+            }
+
+            .arte-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .busca-bar {
+                flex-direction: column;
+                border: none;
+            }
+
+            .busca-bar input,
+            .busca-bar select,
+            .busca-bar button {
+                border: 2px solid var(--noite);
+                padding: 14px;
+                width: 100%;
+            }
+        }
+.mapa {
+    padding: 80px 72px;
+    background: #f5f5f5;
+}
+
+.mapa h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.mapa iframe {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav">
+        <div class="nav-logo">Tauá<span>.</span></div>
+        <ul class="nav-links">
+            <li> <a href="login.html" class="login-btn-nav">Login</a>
+            <li><a href="#pontos">Pontos Turísticos</a></li>
+            <li><a href="#gastronomia">Gastronomia</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#artesanato">Artesanato</a></li>
+            <li><a href="#visite">Visite</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-sun"></div>
+        <div class="hero-content reveal">
+            <div class="hero-tag">✦ Sertão dos Inhamuns · Ceará</div>
+            <h1 class="hero-title">Descubra<br><em>Tauá</em></h1>
+            <p class="hero-sub">A Capital Cearense do Carneiro guarda açudes, o Serrote Quinamuiú, museus com fósseis de
+                5 mil anos e o FestBerro, o maior evento agropecuário do Ceará com 40 mil pessoas por dia.</p>
+            <div class="hero-stats">
+                <div>
+                    <div class="hero-stat-num">342km</div>
+                    <div class="hero-stat-label">de Fortaleza</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num">4.018km²</div>
+                    <div class="hero-stat-label">2ª maior área/CE</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num">1762</div>
+                    <div class="hero-stat-label">Igreja Matriz</div>
+                </div>
+            </div>
+            <a href="#pontos" class="hero-cta">Explorar a cidade <svg width="18" height="14" fill="none"
+                    viewBox="0 0 18 14">
+                    <path d="M1 7h16M11 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></a>
+                <a href="login.html" class="hero-cta">Login<svg width="18" height="14" fill="none"
+                    viewBox="0 0 18 14"> 
+                    <path d="M1 7h16M11 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></a>
+        </div>
+    </section>
+
+    <div class="banner-hist">
+        <div class="reveal">
+            <p class="sec-tag" style="color:var(--ouro)">✦ Nossa missão</p>
+            <h2>Nunca mais perca um evento por <em>não saber que existia</em></h2>
+            <p>Tauá é cortada pela BR-020, rodovia que liga Brasília a Fortaleza. Muitos turistas passam sem saber que
+                a cidade tem fósseis de mamutes, o melhor carneiro do Brasil e o FestBerro, que movimentou mais de R$ 30
+                milhões em 2025. Esta plataforma nasceu para mudar isso.</p>
+        </div>
+        <div class="story-quote reveal">
+            <blockquote>"Fui a Tauá num feriado e só fiquei no hotel. Depois descobri que o FestBerro com Wesley
+                Safadão, vaquejada e manta de carneiro direto do produtor estava acontecendo na cidade."</blockquote>
+            <cite>— Relato de turista de Fortaleza</cite>
+        </div>
+    </div>
+
+    <div class="busca-wrap">
+        <p class="sec-tag" style="text-align:center;margin-bottom:4px">✦ Encontre</p>
+        <h2 class="reveal">O que você quer <em style="font-style:italic;color:var(--terra)">descobrir</em>?</h2>
+        <p class="reveal">Eventos, pontos turísticos, gastronomia e muito mais em Tauá.</p>
+        <div class="busca-bar reveal">
+            <input type="text" placeholder="Ex: Serrote Quinamuiú, FestBerro, manta de carneiro...">
+            <select>
+                <option>Tudo</option>
+                <option>Eventos</option>
+                <option>Pontos Turísticos</option>
+                <option>Gastronomia</option>
+                <option>Artesanato</option>
+            </select>
+            <button>Buscar</button>
+        </div>
+        <div class="filtros reveal">
+            <button class="ftb active">Todos</button>
+            <button class="ftb">Este fim de semana</button>
+            <button class="ftb">Esta semana</button>
+            <button class="ftb">Gratuito</button>
+            <button class="ftb">Natureza</button>
+            <button class="ftb">Família</button>
+            <button class="ftb">Cultural</button>
+        </div>
+    </div>
+
+    <!-- PONTOS TURÍSTICOS -->
+    <section class="pontos section" id="pontos">
+        <div class="pontos-header reveal">
+            <div>
+                <p class="sec-tag">✦ Destinos</p>
+                <h2 class="sec-title">Pontos<br>Turísticos</h2>
+            </div>
+            <p class="sec-desc">Do Serrote Quinamuiú eternizado no hino da cidade ao Açude Trici e ao Museu com
+                fósseis de mamutes e preguiças gigantes, Tauá surpreende a cada esquina.</p>
+        </div>
+
+        <div class="pontos-grid">
+            <div class="pcard reveal">
+                <div class="pcard-bg bg-quinamui"></div>
+                <div class="pcard-emoji">⛰️</div>
+                <div class="pcard-overlay">
+                    <span class="pcard-cat">✦ Natureza · Trilha · Mirante</span>
+                    <h3 class="pcard-name">Serrote Quinamuiú</h3>
+                    <p class="pcard-desc">O maior ícone natural de Tauá, às margens do Rio Trici e eternizado no hino
+                        municipal. Com 4.800m de extensão, o topo tem uma cruz instalada em 1899. Trilha de 40 minutos
+                        com guia local (Secretaria de Cultura). Vista panorâmica de toda a cidade. Investimento de R$ 5
+                        milhões para o Parque Ecológico.</p>
+                    <span class="pcard-badge">📍 3,5 km do centro · Acesso BR-020</span>
+                </div>
+            </div>
+            <div class="pcard reveal">
+                <div class="pcard-bg bg-trici"></div>
+                <div class="pcard-emoji">💧</div>
+                <div class="pcard-overlay">
+                    <span class="pcard-cat">✦ Natureza · Açude</span>
+                    <h3 class="pcard-name">Açude Trici</h3>
+                    <p class="pcard-desc">Represa no rio Trici, afluente do Jaguaribe. Espelho d'água cercado pela
+                        caatinga nativa. Pôr do sol inesquecível e o cenário perfeito para contemplação e fotografia.
+                    </p>
+                    <span class="pcard-badge">📍 Zona rural</span>
+                </div>
+            </div>
+            <div class="pcard reveal">
+                <div class="pcard-bg bg-marrecus"></div>
+                <div class="pcard-emoji">🏊</div>
+                <div class="pcard-overlay">
+                    <span class="pcard-cat">✦ Lazer · Parque Aquático</span>
+                    <h3 class="pcard-name">Marrecus Park</h3>
+                    <p class="pcard-desc">Avaliação 4.7★ com 872 avaliações. Toboáguas, piscinas, fazendinha e
+                        gastronomia sertaneja num complexo completo. Opções de pacotes do restaurante ao dia inteiro nas
+                        piscinas.</p>
+                    <span class="pcard-badge">📍 BR-020, KM 87 · (88) 99657-1222</span>
+                </div>
+            </div>
+            <div class="pcard reveal">
+                <div class="pcard-bg bg-museu"></div>
+                <div class="pcard-emoji">🦣</div>
+                <div class="pcard-overlay">
+                    <span class="pcard-cat">✦ Paleontologia · Arqueologia</span>
+                    <h3 class="pcard-name">Museu Regional dos Inhamuns</h3>
+                    <p class="pcard-desc">~2.000 peças em prédio de 1903 (ex-cadeia pública). Fósseis de mastodonte,
+                        tatu gigante e preguiça gigante com 5.000 anos. Inscrições rupestres e artefatos dos índios
+                        Cariris e Jucás. Tour 360° disponível online.</p>
+                    <span class="pcard-badge">📍 Praça Duque de Caxias · Seg–Sex 8h–17h</span>
+                </div>
+            </div>
+            <div class="pcard reveal">
+                <div class="pcard-bg bg-parque"></div>
+                <div class="pcard-emoji">🌳</div>
+                <div class="pcard-overlay">
+                    <span class="pcard-cat">✦ Lazer · Parque Urbano</span>
+                    <h3 class="pcard-name">Parque da Cidade</h3>
+                    <p class="pcard-desc">Avaliação 4.5★ (368 avaliações). Lagoa natural no coração da cidade, ilha com
+                        4 quiosques, esportes e brisa constante. A menos de 2km da BR-020. O pulmão verde de Tauá.</p>
+                    <span class="pcard-badge">📍 Centro · Entrada livre</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3px">
+            <div class="pcard reveal" style="min-height:280px">
+                <div class="pcard-bg bg-matriz"></div>
+                <div class="pcard-emoji">⛪</div>
+                <div class="pcard-overlay">
+                    <span class="pcard-cat">✦ Patrimônio Federal · 1762</span>
+                    <h3 class="pcard-name">Igreja Matriz N. Sra. do Rosário</h3>
+                    <p class="pcard-desc">Inaugurada em 1762, tombada pelo governo federal. Avaliação 4.8★. Domo
+                        cilíndrico original expandido em 1906. Padroeira de Tauá celebrada em 7 de outubro.</p>
+                </div>
+            </div>
+            <div class="pcard reveal" style="min-height:280px">
+                <div class="pcard-bg bg-artesanato"></div>
+                <div class="pcard-emoji">🏺</div>
+                <div class="pcard-overlay">
+                    <span class="pcard-cat">✦ Cultura · Artesanato</span>
+                    <h3 class="pcard-name">Centro de Artesanato Luiza Anastácia</h3>
+                    <p class="pcard-desc">O melhor da produção artesanal tauaense: couro, cerâmica e renda reunidos em
+                        um único espaço. Os melhores presentes para levar do sertão dos Inhamuns.</p>
+                </div>
+            </div>
+            <div class="pcard reveal" style="min-height:280px">
+                <div class="pcard-bg bg-expo"></div>
+                <div class="pcard-emoji">🐏</div>
+                <div class="pcard-overlay">
+                    <span class="pcard-cat">✦ Agronegócio · Shows</span>
+                    <h3 class="pcard-name">Parque de Exposição Pedro Alexandrino</h3>
+                    <p class="pcard-desc">Sede do FestBerro — maior feira agropecuária do Ceará. Avaliação 4.1★. Palco
+                        de vaquejada, exposição de animais e festivais culturais com artistas nacionais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GASTRONOMIA -->
+    <section class="gastro section" id="gastronomia">
+        <div class="reveal">
+            <p class="sec-tag">✦ Sabores do Sertão</p>
+            <h2 class="sec-title">Gastronomia</h2>
+            <p class="sec-desc">Reconhecida como Capital Cearense do Carneiro, Tauá tem a manta de carneiro com pedido
+                de Indicação Geográfica no INPI e já exportou para Holanda e Itália.</p>
+        </div>
+        <div class="gastro-grid">
+            <div class="gcard gcard-dest reveal">
+                <div class="gcard-dest-img">🐑</div>
+                <div class="gcard-dest-txt">
+                    <h3>Manta de Carneiro dos Inhamuns</h3>
+                    <p>O prato símbolo de Tauá. Desossa do animal, salga e secagem ao sol técnica secular dos
+                        tropeiros dos Inhamuns, aperfeiçoada por instituições como Embrapa, Ematerce e Sebrae. Com menos
+                        gordura, menor colesterol e sabor único graças à flora nativa da caatinga que os ovinos
+                        consomem. Tauá responde por <strong style="color:var(--ouro)">35%</strong> da oferta de ovinos
+                        do Ceará. O produto já foi exportado para <strong style="color:var(--ouro)">Holanda e
+                            Itália</strong>, e em 2024 o IFCE e a Embrapa submeteram pedido de Indicação Geográfica ao
+                        INPI.</p>
+                    <span class="gcard-tag">✦ Capital Cearense do Carneiro</span>
+                </div>
+            </div>
+            <div class="gcard reveal">
+                <div class="gcard-icon">🥩</div>
+                <div class="gcard-name">Carne de Sol (Carne de Vento)</div>
+                <p class="gcard-desc">Símbolo da culinária sertaneja. Desidratada ao sol para conservação nas viagens
+                    dos tropeiros. Servida com macaxeira, manteiga da terra e vinagrete. Clássico obrigatório em Tauá.
+                </p>
+                <span class="gcard-tag">Típico sertanejo</span>
+            </div>
+            <div class="gcard reveal">
+                <div class="gcard-icon">🍲</div>
+                <div class="gcard-name">Baião de Dois</div>
+                <p class="gcard-desc">Feijão-verde cozido com arroz, queijo coalho, manteiga da terra e charque. O prato
+                    mais democrático do Ceará presente em todas as festas de Tauá e nas mesas dos forrozeiros.</p>
+                <span class="gcard-tag">Prato típico</span>
+            </div>
+            <div class="gcard reveal">
+                <div class="gcard-icon">🌽</div>
+                <div class="gcard-name">Paçoca Cearense</div>
+                <p class="gcard-desc">Carne de sol frita e socada com farinha de mandioca, manteiga da terra e
+                    pimenta-do-reino. Uma versão salgada e robusta perfeita para o almoço sertanejo.</p>
+                <span class="gcard-tag">Herança sertaneja</span>
+            </div>
+            <div class="gcard reveal">
+                <div class="gcard-icon">🐐</div>
+                <div class="gcard-name">Buchada de Bode</div>
+                <p class="gcard-desc">Miúdos de bode temperados com coentro, alho e pimentas, cozidos dentro do próprio
+                    bucho. Uma iguaria que representa a criatividade da culinária dos Inhamuns aproveitar tudo do
+                    animal.</p>
+                <span class="gcard-tag">Culinária regional</span>
+            </div>
+            <div class="gcard reveal">
+                <div class="gcard-icon">🟡</div>
+                <div class="gcard-name">Rapadura com Queijo</div>
+                <p class="gcard-desc">O Ceará é o maior produtor de rapadura do Brasil. Em Tauá, a tradição é comer com
+                    queijo coalho fresco ou farinha o lanche mais típico do sertão dos Inhamuns.</p>
+                <span class="gcard-tag">Doce do sertão</span>
+            </div>
+            <div class="gcard reveal">
+                <div class="gcard-icon">🫓</div>
+                <div class="gcard-name">Tapioca Nordestina</div>
+                <p class="gcard-desc">Farinha de mandioca com recheios que vão do queijo coalho com carne de sol a
+                    banana com mel de engenho. No café da manhã dos tauaenses, presença garantida.</p>
+                <span class="gcard-tag">Café da manhã</span>
+            </div>
+            <div class="gcard reveal">
+                <div class="gcard-icon">🧀</div>
+                <div class="gcard-name">Doces de Leite de Cabra</div>
+                <p class="gcard-desc">Com grande produção caprina nos Inhamuns, o leite de cabra vira doces e queijos
+                    com sabor diferenciado. Desenvolvidos com tecnologia da Embrapa em parceria com o IFCE Tauá.</p>
+                <span class="gcard-tag">Agricultura familiar</span>
+            </div>
+            <div class="gcard reveal">
+                <div class="gcard-icon">🥘</div>
+                <div class="gcard-name">Panelada</div>
+                <p class="gcard-desc">Tripas e bucho de boi cozidos com pimentas, cheiro-verde, alho, pimentão e
+                    tomates. Um cozido de tempero forte e sabor marcante, muito apreciado nas madrugadas dos eventos.
+                </p>
+                <span class="gcard-tag">Cozinha popular</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section class="eventos section" id="eventos">
+        <div class="reveal">
+            <p class="sec-tag">✦ Agenda</p>
+            <h2 class="sec-title">Eventos<br>&amp; Festivais</h2>
+            <p class="sec-desc">O FestBerro que movimentou R$30 milhões em 2025, às festas religiosas com mais de
+                260 anos de tradição. Tauá tem agenda o ano inteiro.</p>
+        </div>
+        <div class="etabs">
+            <button class="etab active" onclick="filterEv(this,'todos')">Todos</button>
+            <button class="etab" onclick="filterEv(this,'rel')">Religioso</button>
+            <button class="etab" onclick="filterEv(this,'cult')">Cultural</button>
+            <button class="etab" onclick="filterEv(this,'agro')">Agropecuário</button>
+        </div>
+        <div class="ev-grid">
+            <!-- FestBerro destaque -->
+            <div class="ecard efeat reveal" data-cat="agro">
+                <div class="efeat-l">
+                    <div class="feat-num">XVIII</div>
+                    <h3 class="feat-title">FestBerro <br>Festival do <em>Berro</em></h3>
+                    <p class="feat-sub">A maior feira agropecuária do Ceará, desde 2003 no Parque de Exposição Pedro
+                        Alexandrino Feitosa. Exposição de animais, vaquejada, rodadas de negócios, festival gastronômico
+                        e shows nacionais com entrada gratuita.</p>
+                    <div class="artist-pills">
+                        <span class="apill">Wesley Safadão</span><span class="apill">Bell Marques</span>
+                        <span class="apill">Nattan</span><span class="apill">Xand Avião</span>
+                        <span class="apill">Léo Santana</span><span class="apill">Zé Vaqueiro</span>
+                    </div>
+                </div>
+                <div class="efeat-r">
+                    <div>
+                        <span class="ebadge b-agro">Agropecuário · Shows · Gratuito</span>
+                        <p style="font-size:.78rem;color:rgba(250,245,238,.4);margin-top:8px">Novembro · Anual · Parque
+                            de Exposição</p>
+                    </div>
+                    <div class="feat-stats">
+                        <div>
+                            <div class="fstat-n">R$30M+</div>
+                            <div class="fstat-l">Em negócios</div>
+                        </div>
+                        <div>
+                            <div class="fstat-n">40k</div>
+                            <div class="fstat-l">Pessoas/dia</div>
+                        </div>
+                        <div>
+                            <div class="fstat-n">3.000+</div>
+                            <div class="fstat-l">Animais</div>
+                        </div>
+                    </div>
+                    <a href="#" class="emais">Ver programação →</a>
+                </div>
+            </div>
+
+            <div class="ecard reveal" data-cat="rel">
+                <div class="ecard-date"><span class="eday">13</span><span class="emy">JUN<br>Anual</span></div>
+                <span class="ebadge b-rel">Religioso</span>
+                <h3 class="etitle">Festa de Santo Antônio</h3>
+                <p class="elocal">📍 Igreja Matriz — Centro histórico</p>
+                <p class="edesc">Missa solene, procissão pelas ruas históricas e quermesse com as melhores comidas
+                    típicas do sertão dos Inhamuns.</p>
+                <a href="#" class="emais">Ver detalhes →</a>
+            </div>
+
+            <div class="ecard reveal" data-cat="rel">
+                <div class="ecard-date"><span class="eday">7</span><span class="emy">OUT<br>Anual</span></div>
+                <span class="ebadge b-rel">Religioso</span>
+                <h3 class="etitle">Festa de N. Sra. do Rosário</h3>
+                <p class="elocal">📍 Igreja Matriz (fundada 1762)</p>
+                <p class="edesc">Padroeira de Tauá. Uma das festividades religiosas mais tradicionais da cidade, com
+                    procissão, novenas e missa campal. Mais de 260 anos de devoção ininterrupta.</p>
+                <a href="#" class="emais">Ver detalhes →</a>
+            </div>
+
+            <div class="ecard reveal" data-cat="rel">
+                <div class="ecard-date"><span class="eday">ABR</span><span class="emy">·<br>Anual</span></div>
+                <span class="ebadge b-rel">Religioso · Maior do Ceará</span>
+                <h3 class="etitle">Festa de Jesus, Maria e José</h3>
+                <p class="elocal">📍 Igreja de Jesus — Distrito Marrecas (~1717)</p>
+                <p class="edesc">Um dos maiores eventos religiosos do Ceará, realizado no distrito de Marrecas em abril.
+                    A Igreja de Jesus foi construída no início do século XVIII, em torno de 1717.</p>
+                <a href="#" class="emais">Ver detalhes →</a>
+            </div>
+
+            <div class="ecard reveal" data-cat="cult">
+                <div class="ecard-date"><span class="eday">JUN</span><span class="emy">·<br>Anual</span></div>
+                <span class="ebadge b-cult">Cultura · Forró</span>
+                <h3 class="etitle">Forró Pé de Serra</h3>
+                <p class="elocal">📍 Praça Dr. Alberto Feitosa Lima</p>
+                <p class="edesc">Quadrilhas, sanfoneiros locais, baião de dois e o melhor forró raiz do sertão dos
+                    Inhamuns. Uma das festas juninas mais animadas da região.</p>
+                <a href="#" class="emais">Ver detalhes →</a>
+            </div>
+
+            <div class="ecard reveal" data-cat="agro">
+                <div class="ecard-date"><span class="eday">NOV</span><span class="emy">·<br>Anual</span></div>
+                <span class="ebadge b-agro">Vaquejada</span>
+                <h3 class="etitle">Vaquejada FestBerro</h3>
+                <p class="elocal">📍 Arena — Parque de Exposição</p>
+                <p class="edesc">Premiação de R$ 100 mil em 4 categorias: Profissional, Aspirante, Feminina e Juvenil.
+                    Competidores de todo o Nordeste. Uma tradição que resume a identidade do sertão.</p>
+                <a href="#" class="emais">Ver detalhes →</a>
+            </div>
+
+            <div class="ecard reveal" data-cat="agro">
+                <div class="ecard-date"><span class="eday">NOV</span><span class="emy">·<br>Anual</span></div>
+                <span class="ebadge b-gast">Gastronomia</span>
+                <h3 class="etitle">Carneirode — Festival da Manta</h3>
+                <p class="elocal">📍 Parque de Exposição Pedro Alexandrino</p>
+                <p class="edesc">Concurso e degustação da manta de carneiro dos Inhamuns, com Indicação Geográfica
+                    reconhecida pelo INPI. Aula-show de gastronomia com chefs regionais e nacionais.</p>
+                <a href="#" class="emais">Ver detalhes →</a>
+            </div>
+
+            <div class="ecard reveal" data-cat="cult">
+                <div class="ecard-date"><span class="eday">Todo</span><span class="emy">ANO<br>·</span></div>
+                <span class="ebadge b-cult">Cultural</span>
+                <h3 class="etitle">Exposições — Museu dos Inhamuns</h3>
+                <p class="elocal">📍 Praça Duque de Caxias — Centro</p>
+                <p class="edesc">Exposições itinerantes nos bairros e distritos. Tour virtual 360° em hubvirtual.com.br.
+                    Visitas de escolas e pesquisadores o ano inteiro. Seg–Sex 8h–17h.</p>
+                <a href="#" class="emais">Ver programação →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTESANATO -->
+    <section class="artesanato section" id="artesanato">
+        <div class="reveal">
+            <p class="sec-tag">✦ Feito à mão</p>
+            <h2 class="sec-title">Artesanato<br>Tauaense</h2>
+            <p class="sec-desc">O talento do povo sertanejo em forma de arte. Do trabalho com couro, herança do Ciclo
+                do Couro dos Inhamuns à renda e cerâmica local que contam séculos de história.</p>
+        </div>
+        <div class="arte-grid">
+            <div class="acard reveal">
+                <div class="acard-icon">🥋</div>
+                <h3 class="acard-name">Trabalho em Couro</h3>
+                <p class="acard-desc">Herança direta do Ciclo do Couro, período em que toda a economia dos Inhamuns
+                    girava em torno da pecuária. Bolsas, chapéus, cintos e artefatos feitos artesanalmente com técnicas
+                    centenárias.</p>
+            </div>
+            <div class="acard reveal">
+                <div class="acard-icon">🏺</div>
+                <h3 class="acard-name">Cerâmica Sertaneja</h3>
+                <p class="acard-desc">Peças utilitárias e decorativas produzidas com argila da região. Tigelas, vasos e
+                    esculturas que carregam a identidade visual do sertão dos Inhamuns.</p>
+            </div>
+            <div class="acard reveal">
+                <div class="acard-icon">🧵</div>
+                <h3 class="acard-name">Rendas e Bordados</h3>
+                <p class="acard-desc">A tradição do bordado e da renda nordestina mantida pelas artesãs de Tauá.
+                    Toalhas, roupas e adereços com padrões únicos que preservam séculos de cultura.</p>
+            </div>
+            <div class="acard reveal">
+                <div class="acard-icon">📜</div>
+                <h3 class="acard-name">Literatura de Cordel</h3>
+                <p class="acard-desc">Folhetos ilustrados com xilogravura que narram causos, histórias e tradições do
+                    Sertão dos Inhamuns. Uma das expressões culturais mais vivas e autênticas do Nordeste.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / COMO CHEGAR -->
+    <div class="cta-section" id="visite">
+        <div class="reveal">
+            <p
+                style="font-size:.68rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;margin-bottom:12px">
+                ✦ Planeje sua visita</p>
+            <h2>Tauá está te <em>esperando</em></h2>
+            <p>No coração do sertão do Ceará, a 342 km de Fortaleza pela BR-020,a rodovia que liga a capital ao Brasil
+                Central. Segunda maior área territorial do estado com 4.018 km².</p>
+            <div class="cta-btns">
+                <a href="#eventos" class="btn-dark">Ver agenda de eventos</a>
+                <a href="#busca" class="btn-wht">Explorar a cidade</a>
+            </div>
+        </div>
+        <div class="cta-info reveal">
+            <div class="info-row"><span class="info-icon">🛣️</span>
+                <div>
+                    <div class="info-label">Como chegar</div>
+                    <div class="info-val">BR-020 · 342 km de Fortaleza · ~4h de carro</div>
+                </div>
+            </div>
+            <div class="info-row"><span class="info-icon">✈️</span>
+                <div>
+                    <div class="info-label">Aeroporto</div>
+                    <div class="info-val">Aeroporto Pedro Teixeira Castelo (Tauá) · FOR (Fortaleza)</div>
+                </div>
+            </div>
+            <div class="info-row"><span class="info-icon">🌡️</span>
+                <div>
+                    <div class="info-label">Clima</div>
+                    <div class="info-val">Semiárido · Altitude 402m · UTC-3 · ~28°C média</div>
+                </div>
+            </div>
+            <div class="info-row"><span class="info-icon">📱</span>
+                <div>
+                    <div class="info-label">Transporte local</div>
+                    <div class="info-val">Tauá Mobi — 1º app de transporte público do Brasil</div>
+                </div>
+            </div>
+            <div class="info-row"><span class="info-icon">☀️</span>
+                <div>
+                    <div class="info-label">Melhores épocas</div>
+                    <div class="info-val">Novembro (FestBerro) · Abril (Festa de Jesus) · Junho (Forró)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="mapa">
+    <h2>Como chegar em Tauá</h2>
+
+    <iframe
+        src="https://www.google.com/maps?q=Tauá+Ceará&output=embed"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</section>
+
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">Tauá<span>.</span></div>
+                <p class="footer-tagline">Plataforma de turismo e eventos de Tauá — Sertão dos Inhamuns, Ceará. Capital
+                    Cearense do Carneiro. 2ª maior área territorial do estado.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#pontos">Pontos Turísticos</a></li>
+                    <li><a href="#gastronomia">Gastronomia</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#artesanato">Artesanato</a></li>
+                    <li><a href="#visite">Como Chegar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Destaques</h4>
+                <ul>
+                    <li><a href="#">Serrote Quinamuiú</a></li>
+                    <li><a href="#">Museu dos Inhamuns</a></li>
+                    <li><a href="#">FestBerro</a></li>
+                    <li><a href="#">Manta de Carneiro</a></li>
+                    <li><a href="#">Marrecus Park</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="#">Sec. de Turismo de Tauá</a></li>
+                    <li><a href="#">Cadastrar Evento</a></li>
+                    <li><a href="#">Museu — (88) 3437-2115</a></li>
+                    <li><a href="#">Marrecus — (88) 99657-1222</a></li>
+                    <li><a href="#">Instagram · Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 Tauá Turismo. Feito com <span>♥</span> no sertão dos Inhamuns.</p>
+            <p>Fontes: HubTauá · Prefeitura de Tauá · IFCE · Embrapa · Wikipedia</p>
+        </div>
+    </footer>
+
+    <script>
+        const revs = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 70); obs.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        revs.forEach(el => obs.observe(el));
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('nav').style.background = window.scrollY > 60 ? 'rgba(15,27,45,0.97)' : 'rgba(15,27,45,0.88)';
+        });
+        document.querySelectorAll('.ftb').forEach(b => {
+            b.addEventListener('click', function () { document.querySelectorAll('.ftb').forEach(x => x.classList.remove('active')); this.classList.add('active'); });
+        });
+        function filterEv(tab, cat) {
+            document.querySelectorAll('.etab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            document.querySelectorAll('.ecard').forEach(c => {
+                if (cat === 'todos' || c.dataset.cat === cat) { c.style.display = ''; }
+                else { c.style.display = 'none'; }
+            });
+        }
+    </script>
+</body>
+
+</html>
