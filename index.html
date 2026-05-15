@@ -12,21 +12,13 @@
     <style>
         :root {
             --terra: #00AEEF;
-            /* azul turístico */
             --areia: #7FDBFF;
-            /* azul claro água */
             --ceu: #0077B6;
-            /* azul oceano */
             --verde: #00B4D8;
-            /* ciano */
             --noite: #023047;
-            /* azul escuro elegante */
             --branco: #F8FDFF;
-            /* branco gelo */
             --ouro: #48CAE4;
-            /* azul destaque */
             --cobre: #0096C7;
-            /* azul médio */
             --cinza: #6B7280;
         }
 
@@ -65,6 +57,7 @@
         .nav-logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
+
             font-weight: 900;
             color: var(--areia);
         }
@@ -190,6 +183,7 @@
             color: #111;
             text-decoration: none;
             padding: 16px 36px;
+            border-radius: 14px;
             font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -543,17 +537,18 @@
 
         .gastro-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
             margin-top: 54px;
         }
 
         .gcard {
             background: #03445e;
             padding: 36px 32px;
-            overflow: hidden;
             transition: background 0.35s;
             border: 1px solid rgba(212, 168, 67, 0.07);
+            border-radius: 20px;
         }
 
         .gcard:hover {
@@ -592,8 +587,9 @@
 
         .gcard-dest {
             grid-column: span 3;
-            border-radius: 22px;
+            border-radius: 24px;
             display: grid;
+            overflow: hidden;
             grid-template-columns: 1fr 2fr;
             background: rgba(0, 180, 216, 0.1);
             border: 1px solid rgba(127, 219, 255, 0.2) !important;
@@ -602,7 +598,7 @@
         .gcard-dest-img {
             background: linear-gradient(135deg, #8B3A1A, #C4622D, #D4A843);
             display: flex;
-            border-radius: 22px 0 0 22px;
+            border-radius: 24px 24px;
             align-items: center;
             justify-content: center;
             font-size: 6rem;
@@ -691,6 +687,7 @@
             overflow: hidden;
             cursor: pointer;
             transition: all 0.35s;
+            border-radius: 20px;
         }
 
         .ecard::before {
@@ -918,6 +915,8 @@
             overflow: hidden;
             transition: all 0.3s;
             cursor: pointer;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
         .acard:hover {
@@ -1020,6 +1019,7 @@
             background: var(--noite);
             padding: 40px;
             display: flex;
+            border-radius: 20px;
             flex-direction: column;
             gap: 22px;
         }
@@ -1506,7 +1506,7 @@
                 <span class="gcard-tag">Doce do sertão</span>
             </div>
             <div class="gcard reveal">
-                <div class="gcard-icon">🫓</div>
+                <div class="gcard-icon">🍽</div>
                 <div class="gcard-name">Tapioca Nordestina</div>
                 <p class="gcard-desc">Farinha de mandioca com recheios que vão do queijo coalho com carne de sol a
                     banana com mel de engenho. No café da manhã dos tauaenses, presença garantida.</p>
