@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Tauá</title>
+
+    <style>
+        :root {
+            --terra: #C4622D;
+            --areia: #E8C87A;
+            --ceu: #2B5F8E;
+            --verde: #4A7C59;
+            --noite: #0F1B2D;
+            --branco: #FAF5EE;
+            --ouro: #D4A843;
+            --cobre: #A0522D;
+            --cinza: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background:
+                linear-gradient(to bottom,
+                    rgba(15, 27, 45, 0.65),
+                    rgba(15, 27, 45, 0.92)),
+                url('https://media-cdn.tripadvisor.com/media/photo-o/06/11/77/9f/taua.jpg') center/cover;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+
+            background: rgba(15, 27, 45, 0.92);
+            border: 1px solid rgba(212, 168, 67, 0.2);
+
+            backdrop-filter: blur(12px);
+
+            padding: 45px;
+            border-radius: 18px;
+
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 35px;
+
+            font-size: 2.4rem;
+            font-weight: bold;
+
+            color: var(--areia);
+        }
+
+        .logo span {
+            color: var(--terra);
+        }
+
+        .sub {
+            text-align: center;
+            color: rgba(250, 245, 238, 0.65);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .input-group {
+            margin-bottom: 22px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+
+            color: var(--ouro);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 16px;
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            color: white;
+            font-size: 1rem;
+
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--terra);
+            box-shadow: 0 0 0 3px rgba(196, 98, 45, 0.2);
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: var(--terra);
+            color: white;
+
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: var(--cobre);
+            transform: translateY(-2px);
+        }
+
+        .extra {
+            margin-top: 22px;
+            text-align: center;
+        }
+
+        .extra a {
+            color: var(--areia);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .extra a:hover {
+            color: white;
+        }
+
+        .linha {
+            margin: 25px 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(250, 245, 238, 0.4);
+            line-height: 1.6;
+        }
+
+        @media(max-width: 500px) {
+            .login-box {
+                padding: 30px;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <div class="logo">
+            Tauá<span>.</span>
+        </div>
+
+        <p class="sub">
+            Entre para explorar os eventos, cultura e turismo do Sertão dos Inhamuns.
+        </p>
+
+        <form>
+
+            <div class="input-group">
+                <label>E-mail</label>
+                <input type="email" placeholder="Digite seu e-mail">
+            </div>
+
+            <div class="input-group">
+                <label>Senha</label>
+                <input type="password" placeholder="Digite sua senha">
+            </div>
+
+            <button class="login-btn">
+                Entrar
+            </button>
+
+        </form>
+
+        <div class="extra">
+            <a href="#">Esqueceu sua senha?</a>
+        </div>
+
+        <div class="linha"></div>
+
+        <div class="footer-text">
+            Plataforma turística de Tauá — Ceará <br>
+            Cultura • Eventos • Gastronomia • Turismo
+        </div>
+
+    </div>
+
+</body>
+</html>

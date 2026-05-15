@@ -8,7 +8,7 @@
     <link
         href="https://imgs.search.brave.com/h3Up4qpSZuNHBGU6cgPRs7d-HF2guT1MbKga1eXTqnk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MDYvMTEvNzcvOWYv/dGF1YS5qcGcp"
         rel="stylesheet">
-        <link rel="stylesheet" href="teste.css">
+    <link rel="stylesheet" href="teste.css">
     <style>
         :root {
             --terra: #C4622D;
@@ -1177,21 +1177,22 @@
                 width: 100%;
             }
         }
-.mapa {
-    padding: 80px 72px;
-    background: #f5f5f5;
-}
 
-.mapa h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
-}
+        .mapa {
+            padding: 80px 72px;
+            background: #f5f5f5;
+        }
 
-.mapa iframe {
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+        .mapa h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .mapa iframe {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 
@@ -1200,7 +1201,7 @@
     <nav id="nav">
         <div class="nav-logo">Tauá<span>.</span></div>
         <ul class="nav-links">
-            <li> <a href="login.html" class="login-btn-nav">Login</a>
+            <li> <a href="login.html" class="login-btn-nav">Login</a></li>
             <li><a href="#pontos">Pontos Turísticos</a></li>
             <li><a href="#gastronomia">Gastronomia</a></li>
             <li><a href="#eventos">Eventos</a></li>
@@ -1236,8 +1237,7 @@
                     <path d="M1 7h16M11 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg></a>
-                <a href="login.html" class="hero-cta">Login<svg width="18" height="14" fill="none"
-                    viewBox="0 0 18 14"> 
+            <a href="login.html" class="hero-cta">Login<svg width="18" height="14" fill="none" viewBox="0 0 18 14">
                     <path d="M1 7h16M11 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg></a>
@@ -1688,18 +1688,13 @@
         </div>
     </div>
 
-<section class="mapa">
-    <h2>Como chegar em Tauá</h2>
+    <section class="mapa">
+        <h2>Como chegar em Tauá</h2>
 
-    <iframe
-        src="https://www.google.com/maps?q=Tauá+Ceará&output=embed"
-        width="100%"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy">
-    </iframe>
-</section>
+        <iframe src="https://www.google.com/maps?q=Tauá+Ceará&output=embed" width="100%" height="450" style="border:0;"
+            allowfullscreen="" loading="lazy">
+        </iframe>
+    </section>
 
 
     <footer>
@@ -1745,31 +1740,29 @@
             <p>Fontes: HubTauá · Prefeitura de Tauá · IFCE · Embrapa · Wikipedia</p>
         </div>
     </footer>
-
-    <script>
-        const revs = document.querySelectorAll('.reveal');
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach((e, i) => {
-                if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 70); obs.unobserve(e.target); }
-            });
-        }, { threshold: 0.1 });
-        revs.forEach(el => obs.observe(el));
-
-        window.addEventListener('scroll', () => {
-            document.getElementById('nav').style.background = window.scrollY > 60 ? 'rgba(15,27,45,0.97)' : 'rgba(15,27,45,0.88)';
+<script>
+    const revs = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach((e, i) => {
+            if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 70); obs.unobserve(e.target); }
         });
-        document.querySelectorAll('.ftb').forEach(b => {
-            b.addEventListener('click', function () { document.querySelectorAll('.ftb').forEach(x => x.classList.remove('active')); this.classList.add('active'); });
+    }, { threshold: 0.1 });
+    revs.forEach(el => obs.observe(el));
+
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').style.background = window.scrollY > 60 ? 'rgba(15,27,45,0.97)' : 'rgba(15,27,45,0.88)';
+    });
+    document.querySelectorAll('.ftb').forEach(b => {
+        b.addEventListener('click', function () { document.querySelectorAll('.ftb').forEach(x => x.classList.remove('active')); this.classList.add('active'); });
+    });
+    function filterEv(tab, cat) {
+        document.querySelectorAll('.etab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelectorAll('.ecard').forEach(c => {
+            if (cat === 'todos' || c.dataset.cat === cat) { c.style.display = ''; }
+            else { c.style.display = 'none'; }
         });
-        function filterEv(tab, cat) {
-            document.querySelectorAll('.etab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            document.querySelectorAll('.ecard').forEach(c => {
-                if (cat === 'todos' || c.dataset.cat === cat) { c.style.display = ''; }
-                else { c.style.display = 'none'; }
-            });
-        }
-    </script>
+    }
+</script>
 </body>
-
 </html>
