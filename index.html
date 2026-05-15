@@ -6,19 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tauá — Coração do Sertão dos Inhamuns</title>
     <link
-        href="https://imgs.search.brave.com/h3Up4qpSZuNHBGU6cgPRs7d-HF2guT1MbKga1eXTqnk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MDYvMTEvNzcvOWYv/dGF1YS5qcGcp"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="teste.css">
     <style>
         :root {
-            --terra: #C4622D;
-            --areia: #E8C87A;
-            --ceu: #2B5F8E;
-            --verde: #4A7C59;
-            --noite: #0F1B2D;
-            --branco: #FAF5EE;
-            --ouro: #D4A843;
-            --cobre: #A0522D;
+            --terra: #00AEEF;
+            /* azul turístico */
+            --areia: #7FDBFF;
+            /* azul claro água */
+            --ceu: #0077B6;
+            /* azul oceano */
+            --verde: #00B4D8;
+            /* ciano */
+            --noite: #023047;
+            /* azul escuro elegante */
+            --branco: #F8FDFF;
+            /* branco gelo */
+            --ouro: #48CAE4;
+            /* azul destaque */
+            --cobre: #0096C7;
+            /* azul médio */
             --cinza: #6B7280;
         }
 
@@ -33,7 +41,7 @@
         }
 
         body {
-            font-family: 'Barlow', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--branco);
             color: var(--noite);
             overflow-x: hidden;
@@ -48,14 +56,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(15, 27, 45, 0.88);
+            background: rgba(2, 48, 71, 0.88);
             backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(212, 168, 67, 0.2);
+            border-bottom: 1px solid rgba(127, 219, 255, 0.2);
             transition: background 0.3s;
         }
 
         .nav-logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
             font-weight: 900;
             color: var(--areia);
@@ -96,20 +104,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(15, 27, 45, 0.15) 0%, rgba(15, 27, 45, 0.55) 55%, rgba(15, 27, 45, 0.92) 100%),
-                url('https://imgs.search.brave.com/h3Up4qpSZuNHBGU6cgPRs7d-HF2guT1MbKga1eXTqnk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MDYvMTEvNzcvOWYv/dGF1YS5qcGc') center/cover;
-        }
-
-        .hero-sun {
-            position: absolute;
-            top: 90px;
-            right: 130px;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #FFD97D 0%, #E8A020 45%, rgba(232, 160, 32, 0) 72%);
-            filter: blur(1px);
-            animation: sun-pulse 4s ease-in-out infinite;
+            background: linear-gradient(to bottom, rgba(0, 174, 239, 0.25) 0%, rgba(2, 48, 71, 0.55) 55%, rgba(2, 48, 71, 0.95) 100%), url('https://imgs.search.brave.com/h3Up4qpSZuNHBGU6cgPRs7d-HF2guT1MbKga1eXTqnk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MDYvMTEvNzcvOWYv/dGF1YS5qcGc') center/cover;
         }
 
         @keyframes sun-pulse {
@@ -140,7 +135,7 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--ouro);
-            border: 1px solid rgba(212, 168, 67, 0.6);
+            border: 1px solid rgba(127, 219, 255, 0.5);
             padding: 5px 14px;
             margin-bottom: 22px;
         }
@@ -191,8 +186,8 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: var(--terra);
-            color: #fff;
+            background: var(--ouro);
+            color: #111;
             text-decoration: none;
             padding: 16px 36px;
             font-size: 0.8rem;
@@ -209,6 +204,8 @@
 
         .section {
             padding: 96px 72px;
+            border-radius: 28px;
+            margin: 20px;
         }
 
         .sec-tag {
@@ -240,6 +237,8 @@
             background: var(--noite);
             padding: 80px 72px;
             display: grid;
+            border-radius: 28px;
+            margin: 20px;
             grid-template-columns: 1fr 1fr;
             gap: 64px;
             align-items: center;
@@ -290,6 +289,8 @@
         .busca-wrap {
             background: var(--branco);
             padding: 72px 72px;
+            border-radius: 28px;
+            margin: 20px;
             text-align: center;
         }
 
@@ -316,6 +317,7 @@
             padding: 17px 22px;
             font-family: 'Barlow', sans-serif;
             font-size: 1rem;
+            border-radius: 18px 0 0 18px;
             border: none;
             outline: none;
             background: transparent;
@@ -324,6 +326,7 @@
         .busca-bar select {
             padding: 0 16px;
             border: none;
+            border-radius: 0;
             border-left: 2px solid var(--noite);
             background: transparent;
             font-family: 'Barlow', sans-serif;
@@ -407,6 +410,7 @@
 
         .pcard-bg {
             position: absolute;
+            border-radius: 18px;
             inset: 0;
             background-size: cover;
             background-position: center;
@@ -419,8 +423,9 @@
 
         .pcard-overlay {
             position: absolute;
+            border-radius: 18px;
             inset: 0;
-            background: linear-gradient(to top, rgba(15, 27, 45, 0.93) 0%, rgba(15, 27, 45, 0.04) 55%);
+            background: linear-gradient(to top, rgba(2, 48, 71, 0.95) 0%, rgba(2, 48, 71, 0.08) 55%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -429,7 +434,7 @@
         }
 
         .pcard:hover .pcard-overlay {
-            background: linear-gradient(to top, rgba(196, 98, 45, 0.9) 0%, rgba(196, 98, 45, 0.03) 55%);
+            background: linear-gradient(to top, rgba(0, 180, 216, 0.9) 0%, rgba(0, 180, 216, 0.05) 55%);
         }
 
         .pcard-emoji {
@@ -480,7 +485,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .bg-quinamui {
+        .bg-hist {
             background: linear-gradient(160deg, #3b6b40, #1f3c24, #c4622d);
         }
 
@@ -488,32 +493,40 @@
             background: linear-gradient(160deg, #1a4a72, #0d2640, #4a7c59);
         }
 
+        .bg-quinamui {
+            background: linear-gradient(160deg, #00B4D8, #0077B6, #90E0EF);
+        }
+
+        .bg-trici {
+            background: linear-gradient(160deg, #0096C7, #023047, #48CAE4);
+        }
+
         .bg-marrecus {
-            background: linear-gradient(160deg, #1a6040, #0d3020, #2b5f8e);
+            background: linear-gradient(160deg, #00AEEF, #0077B6, #7FDBFF);
         }
 
         .bg-museu {
-            background: linear-gradient(160deg, #6b4a1a, #3c2a0a, #c4622d);
+            background: linear-gradient(160deg, #48CAE4, #0096C7, #023047);
         }
 
         .bg-parque {
-            background: linear-gradient(160deg, #2b5f8e, #1a3d5c, #4a7c59);
+            background: linear-gradient(160deg, #0077B6, #00B4D8, #90E0EF);
         }
 
         .bg-artesanato {
-            background: linear-gradient(160deg, #8b4513, #5c2d0a, #d4a843);
+            background: linear-gradient(160deg, #00AEEF, #48CAE4, #7FDBFF);
         }
 
         .bg-matriz {
-            background: linear-gradient(160deg, #2b5f8e, #c4622d, #1a3d5c);
+            background: linear-gradient(160deg, #023047, #0096C7, #90E0EF);
         }
 
         .bg-expo {
-            background: linear-gradient(160deg, #4a7c59, #1f3c24, #0d2640);
+            background: linear-gradient(160deg, #0077B6, #00AEEF, #48CAE4);
         }
 
         .gastro {
-            background: #150E06;
+            background: #012A3A;
         }
 
         .gastro .sec-tag {
@@ -536,8 +549,9 @@
         }
 
         .gcard {
-            background: #1A0F07;
+            background: #03445e;
             padding: 36px 32px;
+            overflow: hidden;
             transition: background 0.35s;
             border: 1px solid rgba(212, 168, 67, 0.07);
         }
@@ -578,15 +592,17 @@
 
         .gcard-dest {
             grid-column: span 3;
+            border-radius: 22px;
             display: grid;
             grid-template-columns: 1fr 2fr;
-            background: rgba(196, 98, 45, 0.1);
-            border: 1px solid rgba(212, 168, 67, 0.2) !important;
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(127, 219, 255, 0.2) !important;
         }
 
         .gcard-dest-img {
             background: linear-gradient(135deg, #8B3A1A, #C4622D, #D4A843);
             display: flex;
+            border-radius: 22px 0 0 22px;
             align-items: center;
             justify-content: center;
             font-size: 6rem;
@@ -611,19 +627,27 @@
         }
 
         .eventos {
-            background: var(--noite);
+            background: #023047;
+            border-radius: 28px;
+            margin: 20px;
         }
 
         .eventos .sec-tag {
             color: var(--ouro);
+            border-radius: 28px;
+            margin: 20px;
         }
 
         .eventos .sec-title {
             color: var(--branco);
+            border-radius: 28px;
+            margin: 20px;
         }
 
         .eventos .sec-desc {
             color: rgba(250, 245, 238, 0.55);
+            border-radius: 28px;
+            margin: 20px;
         }
 
         .etabs {
@@ -792,6 +816,8 @@
         .efeat {
             grid-column: span 3;
             display: grid;
+            border-radius: 22px;
+            overflow: hidden;
             grid-template-columns: 1fr 1fr;
             min-height: 260px;
             background: linear-gradient(135deg, rgba(196, 98, 45, 0.1), rgba(212, 168, 67, 0.05));
@@ -875,6 +901,8 @@
 
         .artesanato {
             background: var(--branco);
+            border-radius: 28px;
+            margin: 20px;
         }
 
         .arte-grid {
@@ -887,6 +915,7 @@
         .acard {
             border: 1px solid rgba(15, 27, 45, 0.08);
             padding: 28px 24px;
+            overflow: hidden;
             transition: all 0.3s;
             cursor: pointer;
         }
@@ -919,6 +948,9 @@
             background: var(--terra);
             padding: 80px 72px;
             display: grid;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 30px;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
@@ -928,6 +960,9 @@
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             font-weight: 900;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 30px;
             color: #fff;
             line-height: 1.1;
         }
@@ -935,6 +970,9 @@
         .cta-section h2 em {
             color: var(--noite);
             font-style: italic;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 30px;
         }
 
         .cta-section p {
@@ -1127,10 +1165,14 @@
             .cta-section {
                 grid-template-columns: 1fr;
                 gap: 32px;
+                border-radius: 28px;
+                margin: 20px;
             }
 
             .pontos-grid {
                 grid-template-columns: 1fr 1fr;
+                border-radius: 28px;
+                margin: 20px;
             }
 
             .pcard:first-child {
@@ -1141,14 +1183,20 @@
 
             .gastro-grid {
                 grid-template-columns: 1fr;
+                border-radius: 28px;
+                margin: 20px;
             }
 
             .gcard-dest {
                 grid-template-columns: 1fr;
+                border-radius: 28px;
+                margin: 20px;
             }
 
             .ev-grid {
                 grid-template-columns: 1fr;
+                border-radius: 28px;
+                margin: 20px;
             }
 
             .efeat {
@@ -1167,6 +1215,7 @@
             .busca-bar {
                 flex-direction: column;
                 border: none;
+                border-radius: 18px;
             }
 
             .busca-bar input,
@@ -1174,6 +1223,7 @@
             .busca-bar button {
                 border: 2px solid var(--noite);
                 padding: 14px;
+                border-radius: 18px;
                 width: 100%;
             }
         }
@@ -1181,6 +1231,8 @@
         .mapa {
             padding: 80px 72px;
             background: #f5f5f5;
+            border-radius: 28px;
+            margin: 20px;
         }
 
         .mapa h2 {
@@ -1190,7 +1242,7 @@
         }
 
         .mapa iframe {
-            border-radius: 12px;
+            border-radius: 22px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
     </style>
@@ -1740,29 +1792,30 @@
             <p>Fontes: HubTauá · Prefeitura de Tauá · IFCE · Embrapa · Wikipedia</p>
         </div>
     </footer>
-<script>
-    const revs = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach((e, i) => {
-            if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 70); obs.unobserve(e.target); }
-        });
-    }, { threshold: 0.1 });
-    revs.forEach(el => obs.observe(el));
+    <script>
+        const revs = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 70); obs.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        revs.forEach(el => obs.observe(el));
 
-    window.addEventListener('scroll', () => {
-        document.getElementById('nav').style.background = window.scrollY > 60 ? 'rgba(15,27,45,0.97)' : 'rgba(15,27,45,0.88)';
-    });
-    document.querySelectorAll('.ftb').forEach(b => {
-        b.addEventListener('click', function () { document.querySelectorAll('.ftb').forEach(x => x.classList.remove('active')); this.classList.add('active'); });
-    });
-    function filterEv(tab, cat) {
-        document.querySelectorAll('.etab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        document.querySelectorAll('.ecard').forEach(c => {
-            if (cat === 'todos' || c.dataset.cat === cat) { c.style.display = ''; }
-            else { c.style.display = 'none'; }
+        window.addEventListener('scroll', () => {
+            document.getElementById('nav').style.background = window.scrollY > 60 ? 'rgba(15,27,45,0.97)' : 'rgba(15,27,45,0.88)';
         });
-    }
-</script>
+        document.querySelectorAll('.ftb').forEach(b => {
+            b.addEventListener('click', function () { document.querySelectorAll('.ftb').forEach(x => x.classList.remove('active')); this.classList.add('active'); });
+        });
+        function filterEv(tab, cat) {
+            document.querySelectorAll('.etab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            document.querySelectorAll('.ecard').forEach(c => {
+                if (cat === 'todos' || c.dataset.cat === cat) { c.style.display = ''; }
+                else { c.style.display = 'none'; }
+            });
+        }
+    </script>
 </body>
+
 </html>
