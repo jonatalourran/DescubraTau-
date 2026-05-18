@@ -33,15 +33,6 @@
             width: 100%;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--branco);
-            color: var(--noite);
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-        }
-
         nav {
             position: fixed;
             top: 0;
@@ -523,7 +514,7 @@
         }
 
         .gastro {
-            background: #012A3A;
+            background: #012c3d;
         }
 
         .gastro .sec-tag {
@@ -540,14 +531,13 @@
 
         .gastro-grid {
             display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
             margin-top: 54px;
         }
 
         .gcard {
-            background: #03445e;
+            background: #012c3d;
             padding: 36px 32px;
             transition: background 0.35s;
             border: 1px solid rgba(212, 168, 67, 0.07);
@@ -594,16 +584,16 @@
             display: grid;
             overflow: hidden;
             grid-template-columns: 1fr 2fr;
-            background: rgba(0, 180, 216, 0.1);
+            background: rgba(196, 98, 45, 0.1);
             border: 1px solid rgba(127, 219, 255, 0.2) !important;
         }
 
         .gcard-dest-img {
             background: linear-gradient(135deg, #8B3A1A, #C4622D, #D4A843);
             display: flex;
-            border-radius: 24px 24px;
             align-items: center;
             justify-content: center;
+            border-radius: 24px 24px;
             font-size: 6rem;
             min-height: 240px;
         }
@@ -1139,34 +1129,95 @@
             transform: none;
         }
 
-        @media(max-width:900px) {
+        @media (max-width: 900px) {
+
             nav {
                 padding: 14px 24px;
+            }
 
-                .pcard:first-child,
-                .gcard-dest,
-                .efeat {
-                    grid-column: span 1 !important;
-                    grid-row: span 1 !important;
-                    width: 100%;
-                }
+            .nav-links {
+                display: none;
+            }
 
-                .pcard,
-                .ecard,
-                .acard,
-                .gcard {
-                    width: 100%;
-                    min-width: 0;
-                }
+            .section,
+            .banner-hist,
+            .busca-wrap,
+            .cta-section,
+            footer,
+            .mapa {
+                padding: 56px 24px;
+            }
 
-                .pcard:first-child,
-                .gcard-dest,
-                .efeat {
-                    grid-column: span 1 !important;
-                    grid-row: span 1 !important;
-                    width: 100%;
-                }
+            .hero-content {
+                padding: 0 24px 64px;
+            }
 
+            .hero-stats {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .banner-hist,
+            .cta-section,
+            .gcard-dest,
+            .efeat {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .pontos-grid,
+            .gastro-grid,
+            .ev-grid,
+            .arte-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pcard,
+            .ecard,
+            .acard,
+            .gcard {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .pcard:first-child {
+                grid-column: span 1;
+                min-height: 360px;
+            }
+
+            .gcard-dest {
+                grid-column: span 1;
+            }
+
+            .gcard-dest-img {
+                min-height: 180px;
+                font-size: 4rem;
+            }
+
+            .busca-bar {
+                flex-direction: column;
+                border: none;
+            }
+
+            .busca-bar input,
+            .busca-bar select,
+            .busca-bar button {
+                width: 100%;
+                border-radius: 14px;
+                margin-bottom: 10px;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .sec-title {
+                font-size: 2rem;
+            }
+
+            .gcard-dest-txt {
+                padding: 24px;
             }
         }
 
@@ -1211,7 +1262,9 @@
         }
 
         .gastro-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(3, 1fr);
+            display: grid;
+            gap: 1;
             border-radius: 28px;
             margin: 20px;
         }
