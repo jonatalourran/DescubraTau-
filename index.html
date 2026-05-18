@@ -30,6 +30,7 @@
 
         html {
             scroll-behavior: smooth;
+            width: 100%;
         }
 
         body {
@@ -37,6 +38,8 @@
             background: var(--branco);
             color: var(--noite);
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
         }
 
         nav {
@@ -904,7 +907,7 @@
 
         .arte-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(1fr, 1fr);
             gap: 24px;
             margin-top: 54px;
         }
@@ -1139,93 +1142,118 @@
         @media(max-width:900px) {
             nav {
                 padding: 14px 24px;
-            }
 
-            .nav-links {
-                display: none;
-            }
+                .pcard:first-child,
+                .gcard-dest,
+                .efeat {
+                    grid-column: span 1 !important;
+                    grid-row: span 1 !important;
+                    width: 100%;
+                }
 
-            .section,
-            .banner-hist,
-            .busca-wrap,
-            .cta-section,
-            footer {
-                padding: 56px 24px;
-            }
+                .pcard,
+                .ecard,
+                .acard,
+                .gcard {
+                    width: 100%;
+                    min-width: 0;
+                }
 
-            .hero-content {
-                padding: 0 24px 64px;
-            }
+                .pcard:first-child,
+                .gcard-dest,
+                .efeat {
+                    grid-column: span 1 !important;
+                    grid-row: span 1 !important;
+                    width: 100%;
+                }
 
-            .hero-stats {
-                gap: 20px;
             }
+        }
 
-            .banner-hist,
-            .cta-section {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                border-radius: 28px;
-                margin: 20px;
-            }
+        .nav-links {
+            display: none;
+        }
 
-            .pontos-grid {
-                grid-template-columns: 1fr 1fr;
-                border-radius: 28px;
-                margin: 20px;
-            }
+        .section,
+        .banner-hist,
+        .busca-wrap,
+        .cta-section,
+        footer {
+            padding: 56px 24px;
+        }
 
-            .pcard:first-child {
-                grid-column: span 2;
-                min-height: 360px;
-                grid-row: span 1;
-            }
+        .hero-content {
+            padding: 0 24px 64px;
+        }
 
-            .gastro-grid {
-                grid-template-columns: 1fr;
-                border-radius: 28px;
-                margin: 20px;
-            }
+        .hero-stats {
+            gap: 20px;
+        }
 
-            .gcard-dest {
-                grid-template-columns: 1fr;
-                border-radius: 28px;
-                margin: 20px;
-            }
+        .banner-hist,
+        .cta-section {
+            grid-template-columns: 1fr;
+            gap: 32px;
+            border-radius: 28px;
+            margin: 20px;
+        }
 
-            .ev-grid {
-                grid-template-columns: 1fr;
-                border-radius: 28px;
-                margin: 20px;
-            }
+        .pontos-grid {
+            grid-template-columns: 1fr 1fr;
+            border-radius: 28px;
+            margin: 20px;
+        }
 
-            .efeat {
-                grid-template-columns: 1fr;
-                grid-column: span 1;
-            }
+        .pcard:first-child {
+            grid-column: span 2;
+            min-height: 360px;
+            grid-row: span 1;
+        }
 
-            .arte-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+        .gastro-grid {
+            grid-template-columns: 1fr;
+            border-radius: 28px;
+            margin: 20px;
+        }
 
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+        .gcard-dest {
+            grid-template-columns: 1fr;
+            border-radius: 28px;
+            margin: 20px;
+        }
 
-            .busca-bar {
-                flex-direction: column;
-                border: none;
-                border-radius: 18px;
-            }
+        .ev-grid {
+            grid-template-columns: 1fr;
+            border-radius: 28px;
+            margin: 20px;
+        }
 
-            .busca-bar input,
-            .busca-bar select,
-            .busca-bar button {
-                border: 2px solid var(--noite);
-                padding: 14px;
-                border-radius: 18px;
-                width: 100%;
-            }
+        .efeat {
+            grid-template-columns: 1fr;
+            grid-column: span 1;
+        }
+
+        .arte-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .busca-bar {
+            flex-direction: column;
+            border: none;
+            border-radius: 18px;
+        }
+
+        .busca-bar input,
+        .busca-bar select,
+        .busca-bar button {
+            border: 2px solid var(--noite);
+            padding: 14px;
+            border-radius: 18px;
+            width: 100%;
         }
 
         .mapa {
@@ -1242,8 +1270,16 @@
         }
 
         .mapa iframe {
+            width: 100%;
+            height: 300px;
             border-radius: 22px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        img,
+        iframe {
+            max-width: 100%;
+            display: block;
         }
     </style>
 </head>
@@ -1375,15 +1411,13 @@
                 </div>
             </div>
             <div class="pcard reveal">
-                <div class="pcard-bg bg-marrecus"></div>
-                <div class="pcard-emoji">🏊</div>
+                <div class="pcard-bg bg-matriz"></div>
+                <div class="pcard-emoji">⛪</div>
                 <div class="pcard-overlay">
-                    <span class="pcard-cat">✦ Lazer · Parque Aquático</span>
-                    <h3 class="pcard-name">Marrecus Park</h3>
-                    <p class="pcard-desc">Avaliação 4.7★ com 872 avaliações. Toboáguas, piscinas, fazendinha e
-                        gastronomia sertaneja num complexo completo. Opções de pacotes do restaurante ao dia inteiro nas
-                        piscinas.</p>
-                    <span class="pcard-badge">📍 BR-020, KM 87 · (88) 99657-1222</span>
+                    <span class="pcard-cat">✦ Patrimônio Federal · 1762</span>
+                    <h3 class="pcard-name">Igreja Matriz N. Sra. do Rosário</h3>
+                    <p class="pcard-desc">Inaugurada em 1762, tombada pelo governo federal. Avaliação 4.8★. Domo
+                        cilíndrico original expandido em 1906. Padroeira de Tauá celebrada em 7 de outubro.</p>
                 </div>
             </div>
             <div class="pcard reveal">
@@ -1411,37 +1445,26 @@
             </div>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3px">
-            <div class="pcard reveal" style="min-height:280px">
-                <div class="pcard-bg bg-matriz"></div>
-                <div class="pcard-emoji">⛪</div>
-                <div class="pcard-overlay">
-                    <span class="pcard-cat">✦ Patrimônio Federal · 1762</span>
-                    <h3 class="pcard-name">Igreja Matriz N. Sra. do Rosário</h3>
-                    <p class="pcard-desc">Inaugurada em 1762, tombada pelo governo federal. Avaliação 4.8★. Domo
-                        cilíndrico original expandido em 1906. Padroeira de Tauá celebrada em 7 de outubro.</p>
-                </div>
+        <div class="pcard reveal" style="min-height:280px">
+            <div class="pcard-bg bg-artesanato"></div>
+            <div class="pcard-emoji">🏺</div>
+            <div class="pcard-overlay">
+                <span class="pcard-cat">✦ Cultura · Artesanato</span>
+                <h3 class="pcard-name">Centro de Artesanato Luiza Anastácia</h3>
+                <p class="pcard-desc">O melhor da produção artesanal tauaense: couro, cerâmica e renda reunidos em
+                    um único espaço. Os melhores presentes para levar do sertão dos Inhamuns.</p>
             </div>
-            <div class="pcard reveal" style="min-height:280px">
-                <div class="pcard-bg bg-artesanato"></div>
-                <div class="pcard-emoji">🏺</div>
-                <div class="pcard-overlay">
-                    <span class="pcard-cat">✦ Cultura · Artesanato</span>
-                    <h3 class="pcard-name">Centro de Artesanato Luiza Anastácia</h3>
-                    <p class="pcard-desc">O melhor da produção artesanal tauaense: couro, cerâmica e renda reunidos em
-                        um único espaço. Os melhores presentes para levar do sertão dos Inhamuns.</p>
-                </div>
+        </div>
+        <div class="pcard reveal" style="min-height:280px">
+            <div class="pcard-bg bg-expo"></div>
+            <div class="pcard-emoji">🐏</div>
+            <div class="pcard-overlay">
+                <span class="pcard-cat">✦ Agronegócio · Shows</span>
+                <h3 class="pcard-name">Parque de Exposição Pedro Alexandrino</h3>
+                <p class="pcard-desc">Sede do FestBerro — maior feira agropecuária do Ceará. Avaliação 4.1★. Palco
+                    de vaquejada, exposição de animais e festivais culturais com artistas nacionais.</p>
             </div>
-            <div class="pcard reveal" style="min-height:280px">
-                <div class="pcard-bg bg-expo"></div>
-                <div class="pcard-emoji">🐏</div>
-                <div class="pcard-overlay">
-                    <span class="pcard-cat">✦ Agronegócio · Shows</span>
-                    <h3 class="pcard-name">Parque de Exposição Pedro Alexandrino</h3>
-                    <p class="pcard-desc">Sede do FestBerro — maior feira agropecuária do Ceará. Avaliação 4.1★. Palco
-                        de vaquejada, exposição de animais e festivais culturais com artistas nacionais.</p>
-                </div>
-            </div>
+        </div>
         </div>
     </section>
 
@@ -1698,7 +1721,7 @@
             <p
                 style="font-size:.68rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;margin-bottom:12px">
                 ✦ Planeje sua visita</p>
-            <h2>Tauá está te <em>esperando</em></h2>
+            <h2>Tauá está te<em>esperando</em></h2>
             <p>No coração do sertão do Ceará, a 342 km de Fortaleza pela BR-020,a rodovia que liga a capital ao Brasil
                 Central. Segunda maior área territorial do estado com 4.018 km².</p>
             <div class="cta-btns">
@@ -1753,7 +1776,7 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-logo">Tauá<span>.</span></div>
-                <p class="footer-tagline">Plataforma de turismo e eventos de Tauá — Sertão dos Inhamuns, Ceará. Capital
+                <p class="footer-tagline">Plataforma de turismo e eventos de Tauá. Sertão dos Inhamuns, Ceará. Capital
                     Cearense do Carneiro. 2ª maior área territorial do estado.</p>
             </div>
             <div class="footer-col">
@@ -1779,7 +1802,7 @@
             <div class="footer-col">
                 <h4>Contato</h4>
                 <ul>
-                    <li><a href="#">Sec. de Turismo de Tauá</a></li>
+                    <li><a href="https://www.taua.ce.gov.br/secretaria.php?sec=15">Sec. de Turismo de Tauá</a></li>
                     <li><a href="#">Cadastrar Evento</a></li>
                     <li><a href="#">Museu — (88) 3437-2115</a></li>
                     <li><a href="#">Marrecus — (88) 99657-1222</a></li>
@@ -1819,3 +1842,12 @@
 </body>
 
 </html>
+
+
+
+<!--Atualização do site 
+git add .
+git commit -m "Atualização do site"
+git push-->
+
+<!--firebase deploy-->
